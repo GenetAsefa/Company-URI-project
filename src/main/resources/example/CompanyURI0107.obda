@@ -1,0 +1,157 @@
+[PrefixDeclaration]
+:		http://ex.org/Company#
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[SourceDeclaration]
+sourceUri	datasource1
+connectionUrl	jdbc:mysql://localhost:3306/dbcompanyuri?sessionVariables=sql_mode='ANSI'
+username	root
+password	root
+driverClass	com.mysql.jdbc.Driver
+
+[MappingDeclaration] @collection [[
+mappingId	map_Continent
+target		:continent/{continentCode}/ a :Continent ; :continentName {continentName} . 
+source		select "continentCode", "continentName" from "tblContinent"
+
+mappingId	map_Company
+target		:company/{companyNumber}/ a :Company ; :companyName {companyName} ; :companyStatus {companyStatus} ; :incorporationDate {incorporationDate} ; :companyRevenue {companyRevenue} ; :companyURI {companyURI} . 
+source		SELECT "companyNumber", "companyName", "companyStatus", "incorporationDate",  "companyRevenue", "companyURI" FROM "tblCompany"
+
+mappingId	map_DepartmentCategory
+target		:department/{departmentCode}/ a :DepartmentCategory ; :departmentName {departmentName} . 
+source		SELECT departmentCode,departmentName FROM "tblDepartmentCategory"
+
+mappingId	map_Department
+target		:company/{companyNumber}/ :companyDepartment :department/{departmentCode} . 
+source		SELECT companyNumber, departmentCode FROM "tblDepartment"
+
+mappingId	map_CEO
+target		:ceo/{ceoSSN}/ a :CEO ; :ceoName {ceoName} ; :ceoGender {ceoGender} ; :ceoDOB {ceoDOB} ; :ceoNationality {ceoNationality} . 
+source		select "ceoSSN", "ceoName", "ceoGender" , "ceoDOB"from "tblCEO"
+
+mappingId	map_SICCode
+target		:siccode/{sicCode}/ a :SICCode ; :sicText {sicText} . 
+source		select "sicCode", "sicText" from "tblSICCode"
+
+mappingId	map_ShareHolder
+target		:sharholder/{shareHolderSSN}/ a :ShareHolder ; :shareHolderName {shareHolderName} ; :shareHolderDOB {shareHolderDOB} ; :shareHolderGender {shareHolderGender} ; :shareHolderNationality {shareHolderNationality} . 
+source		select "shareHolderName", "shareHolderDOB", "shareHolderGender", "shareHolderNationality" from "tblShareHolder"
+
+mappingId	map_Return
+target		:return/{idReturn}/ a :Return ; :returnNextDueDate {returnNextDueDate} ; :returnLastMadeUpDate {returnLastMadeUpDate} . 
+source		select "idReturn", "returnNextDueDate", "returnLastMadeUpDate" from "tblReturn"
+
+mappingId	map_PreviousName
+target		:previousname/{idPreviousName}/ a :PreviousName ; :conDate {conDate} ; :companyPreviousName {companyName} . 
+source		select "idPreviousName", "conDate" , "companyName" from "tblPreviousName"
+
+mappingId	map_Mortgage
+target		:mortgage/{idMortgage}/ a :Mortgage ; :numMortCharges {numMortCharges} ; :numMortOutstanding {numMortOutstanding} ; :numMortPartSatisfied {numMortPartSatisfied} ; :numMortSatisfied {numMortSatisfied} . 
+source		select "idMortgage", "numMortCharges", "numMortOutstanding", "numMortPartSatisfied", "numMortSatisfied" from "tblMortgage"
+
+mappingId	map_LimitedPartnership
+target		:limitedpartnership/{idLimitedPartnership}/ a :LimitedPartnership ; :numGenPartners {numGenPartners} ; :numLimPartners {numLimPartners} . 
+source		select "idLimitedPartnership", "numGenPartners", "numLimPartners" from "tblLimitedPartnership"
+
+mappingId	map_DurationOfShareHolder
+target		:durationofshareholder/{idDuration}/ a :DurationOfShareHolder ; :shareHolderStartDate {shareHolderStartDate} ; :shareHolderEndDate {shareHolderEndDate} ; :shareHolderSSN {shareHolderSSN} ; :companyNumber {companyNumber} . 
+source		select "idDuration", "shareHolderStartDate", "shareHolderEndDate", "shareHolderSSN", "companyNumber" from "tblDurationOfShareHolder"
+
+mappingId	map_DurationOfCEO
+target		:durationofceo/{ceoSSN}/ a :DurationOfCEO ; :ceoSSN {ceoSSN} ; :ceoStartDate {ceoStartDate} ; :ceoEndDate {ceoEndDate} ; :companyNumber {companyNumber} . 
+source		select distinct "ceoSSN", "ceoStartDate","ceoEndDate", "companyNumber" from "tblDurationOfCEO"
+
+mappingId	map_Country
+target		:country/{countryCode}/ a :Country ; :countryName {countryName} ; :continentCode {continentCode} ; :population {population} ; :euMember {euMember} . 
+source		select "countryCode", "countryName", "continentCode", "population", "euMember" from "tblCountry"
+
+mappingId	map_CompanyCategory
+target		:category/{categoryName}/ a :CompanyCategory ; :categoryName {categoryName} . 
+source		select "categoryName" from "tblCompanyCategory"
+
+mappingId	map_Address
+target		:address/{addressNumber}/ a :Address ; :careOf {careOf} ; :poBox {poBox} ; :addressLine1 {addressLine1} ; :addressLine2 {addressLine2} ; :postTown {postTown} ; :county {county} ; :country {country} ; :postCode {postCode} . 
+source		select "addressNumber", "careOf", "poBox", "addressLine1", "addressLine2", "postTown", "county", "country", "postCode" from "tblAddress"
+
+mappingId	map_Account
+target		:account/{idAccount}/ a :Account ; :accountRefDay {accountRefDay} ; :accountRefMonth {accountRefMonth} ; :accountNextDueDate {accountNextDueDate} ; :accountLastMadeUpDate {accountLastMadeUpDate} ; :accountCategory {accountCategory} . 
+source		select "idAccount", "accountRefDay", "accountRefMonth", "accountNextDueDate", "accountLastMadeUpDate", "accountCategory" from "tblAccount"
+
+mappingId	map_EUCountry
+target		:country/{countryCode}/ a :EUCountry ; :countryName {countryName} ; :continentCode {continentCode} ; :population {population} . 
+source		select "countryCode", "countryName", "continentCode", "population" from "tblCountry" where "euMember" = 1;
+
+mappingId	op_belongsTo
+target		:country/{countryCode}/ :belongsTo :continent/{continentCode}/ . 
+source		select "countryCode", "continentCode" from "tblCountry"
+
+mappingId	op_ceoWorksIn
+target		:ceo/{ceoSSN}/ :ceoWorksIn :company/{companyNumber}/ . 
+source		select "ceoSSN", "companyNumber" from "tblDurationOfCEO"
+
+mappingId	op_hasAccount
+target		:company/{companyNumber}/ :hasAccount :account/{accountID}/ . 
+source		select "companyNumber", "accountID" from "tblCompany"
+
+mappingId	op_hasCategory
+target		:company/{companyNumber}/ :hasCategory :category/{category}/ . 
+source		select "companyNumber", "category" from "tblCompany"
+
+mappingId	op_hasCEO
+target		:duration/{ceoSSN}/ :hasCEO :ceo/{ceoSSN}/ . 
+source		select "ceoSSN" from "tblDurationOfCEO"
+
+mappingId	op_hasLimitedPartnerahip
+target		:company/{companyNumber}/ :hasLimitedPartnerahip :limitedPartnership/{limitedPartnership}/ . 
+source		select "companyNumber", "limitedPartnership" from "tblCompany"
+
+mappingId	op_hasMortgage
+target		:company/{companyNumber}/ :hasMortgage :mortgage/{numberOfMortgage}/ . 
+source		select "companyNumber", "numberOfMortgage" from "tblCompany"
+
+mappingId	op_hasNumOfMaleEmpInDep
+target		:department/{departmentCode}/ :hasNumOfMaleEmpInDep :maleEmployee/{numOfMaleEmp}/ . 
+source		select "departmentCode", "numOfMaleEmp" from "tblDepartment"
+
+mappingId	op_hasNumOfFemEmpInDep
+target		:department/{departmentCode}/ :hasNumOfFemEmpInDep :femEmployee/{numOfFemEmp}/ . 
+source		select "departmentCode", "numOfFemEmp" from "tblDepartment"
+
+mappingId	op_hasPreviousName
+target		:company/{companyNumber}/ :hasPreviousName :previousname/{idPreviousName}/ . 
+source		select "companyNumber", "idPreviousName" from "tblPreviousName"
+
+mappingId	op_hasReturn
+target		:company/{companyNumber}/ :hasReturn :return/{returnID}/ . 
+source		select "companyNumber", "returnID" from "tblCompany"
+
+mappingId	op_hasShareHolder
+target		:duration/{idDuration}/ :hasShareHolder :shareHolder/{shareHolderSSN}/ . 
+source		select "idDuration", "shareHolderSSN" from "tblDurationOfShareHolder"
+
+mappingId	op_hasShareIn
+target		:duration/{idDuration}/ :hasShareIn :company/{companyNumber}/ . 
+source		select "idDuration", "companyNumber" from "tblDurationOfShareHolder"
+
+mappingId	op_hasSICCode
+target		:company/{companyNumber}/ :hasSICCode :siccode/{sicCode}/ . 
+source		select "companyNumber", "sicCode" from "tblCompany"
+
+mappingId	op_originatedFrom
+target		:company/{companyNumber}/ :originatedFrom :country/{country}/ . 
+source		select "companyNumber", "country" from "tblCompany"
+
+mappingId	op_worksIn
+target		:department/{idQuantityOfEmplyees}/ :worksIn :companyNumber/{companyNumber}/ . 
+source		select "idQuantityOfEmplyees", "companyNumber" from "tblDepartment"
+
+mappingId	op_registeredIn
+target		:company/{companyNumber}/ :registeredIn :address/{address}/ . 
+source		select "companyNumber", "address" from "tblCompany"
+]]
+

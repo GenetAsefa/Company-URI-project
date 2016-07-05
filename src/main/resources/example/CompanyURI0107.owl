@@ -1,0 +1,883 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ex.org/Company#"
+     xml:base="http://ex.org/Company"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://ex.org/Company"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ex.org/Company#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#belongsTo">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Country"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Continent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#ceoWorksIn -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#ceoWorksIn">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DurationOfCEO"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Company"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#companyDepartment -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#companyDepartment"/>
+    
+
+
+    <!-- http://ex.org/Company#hasAccount -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasAccount">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Account"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasCEO -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasCEO">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DurationOfCEO"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#CEO"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasCategory -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasCategory">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#CompanyCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasLimitedPartnerahip -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasLimitedPartnerahip">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#LimitedPartnership"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasMortgage -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasMortgage">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Mortgage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasNumOfEmpInDep -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasNumOfEmpInDep">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DepartmentCategory"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasNumOfFemEmpInDep -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasNumOfFemEmpInDep">
+        <rdfs:subPropertyOf rdf:resource="http://ex.org/Company#hasNumOfEmpInDep"/>
+        <rdfs:domain rdf:resource="http://ex.org/Company#DepartmentCategory"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasNumOfMaleEmpInDep -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasNumOfMaleEmpInDep">
+        <rdfs:subPropertyOf rdf:resource="http://ex.org/Company#hasNumOfEmpInDep"/>
+        <rdfs:domain rdf:resource="http://ex.org/Company#DepartmentCategory"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasPreviousName -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasPreviousName">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#PreviousName"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasReturn -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasReturn">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Return"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasSICCode -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasSICCode">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#SICCode"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasShareHolder -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasShareHolder">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DurationOfShareHolder"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#ShareHolder"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#hasShareIn -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#hasShareIn">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DurationOfShareHolder"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Company"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#originatedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#originatedFrom">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#registeredIn -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#registeredIn">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Address"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ex.org/Company#worksIn -->
+
+    <owl:ObjectProperty rdf:about="http://ex.org/Company#worksIn">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Department"/>
+        <rdfs:range rdf:resource="http://ex.org/Company#Company"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ex.org/Company#accountCategory -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#accountCategory">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Account"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#accountLastMadeUpDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#accountLastMadeUpDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Account"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#accountNextDueDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#accountNextDueDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Account"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#accountRefDay -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#accountRefDay">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Account"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#accountRefMonth -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#accountRefMonth">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Account"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#addressLine1 -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#addressLine1">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#addressLine2 -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#addressLine2">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#careOf -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#careOf">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#categoryName -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#categoryName">
+        <rdfs:domain rdf:resource="http://ex.org/Company#CompanyCategory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#ceoDOB -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#ceoDOB">
+        <rdfs:domain rdf:resource="http://ex.org/Company#CEO"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#ceoEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#ceoEndDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DurationOfCEO"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#ceoGender -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#ceoGender">
+        <rdfs:domain rdf:resource="http://ex.org/Company#CEO"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#ceoName -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#ceoName">
+        <rdfs:domain rdf:resource="http://ex.org/Company#CEO"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#ceoNationality -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#ceoNationality">
+        <rdfs:domain rdf:resource="http://ex.org/Company#CEO"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#ceoSSN -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#ceoSSN">
+        <rdfs:domain rdf:resource="http://ex.org/Company#CEO"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#ceoStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#ceoStartDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DurationOfCEO"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#companyName -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#companyName">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#companyNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#companyNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#companyPreviousName -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#companyPreviousName">
+        <rdfs:domain rdf:resource="http://ex.org/Company#PreviousName"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#companyRevenue -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#companyRevenue">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#companyStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#companyStatus">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#companyURI -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#companyURI">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#conDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#conDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#PreviousName"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#continentCode -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#continentCode">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Continent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#continentName -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#continentName">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Continent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#country -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#country">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#countryCode -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#countryCode">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#countryName -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#countryName">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Country"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#county -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#county">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#departmentCode -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#departmentCode">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DepartmentCategory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#departmentName -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#departmentName">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DepartmentCategory"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#dissolutionDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#dissolutionDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#euMember -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#euMember">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Country"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#euMembership -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#euMembership">
+        <rdfs:domain rdf:resource="http://ex.org/Company#EUCountry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#incorporationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#incorporationDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#numGenPartners -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#numGenPartners">
+        <rdfs:domain rdf:resource="http://ex.org/Company#LimitedPartnership"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#numLimPartners -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#numLimPartners">
+        <rdfs:domain rdf:resource="http://ex.org/Company#LimitedPartnership"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#numMortCharges -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#numMortCharges">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Mortgage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#numMortOutstanding -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#numMortOutstanding">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Mortgage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#numMortPartSatisfied -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#numMortPartSatisfied">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Mortgage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#numMortSatisfied -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#numMortSatisfied">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Mortgage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#numOfFemEmp -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#numOfFemEmp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ex.org/Company#Department"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#numOfMaleEmp -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#numOfMaleEmp">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Department"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#poBox -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#poBox">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#population -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#population">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Country"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#postCode -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#postCode">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#postTown -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#postTown">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#registrationDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#registrationDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#returnLastMadeUpDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#returnLastMadeUpDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Return"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#returnNextDueDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#returnNextDueDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#Return"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#shareHolderDOB -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#shareHolderDOB">
+        <rdfs:domain rdf:resource="http://ex.org/Company#ShareHolder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#shareHolderEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#shareHolderEndDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DurationOfShareHolder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#shareHolderGender -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#shareHolderGender">
+        <rdfs:domain rdf:resource="http://ex.org/Company#ShareHolder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#shareHolderName -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#shareHolderName">
+        <rdfs:domain rdf:resource="http://ex.org/Company#ShareHolder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#shareHolderNationality -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#shareHolderNationality">
+        <rdfs:domain rdf:resource="http://ex.org/Company#ShareHolder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#shareHolderSSN -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#shareHolderSSN">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DurationOfShareHolder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#shareHolderStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#shareHolderStartDate">
+        <rdfs:domain rdf:resource="http://ex.org/Company#DurationOfShareHolder"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#sicCode -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#sicCode">
+        <rdfs:domain rdf:resource="http://ex.org/Company#SICCode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ex.org/Company#sicText -->
+
+    <owl:DatatypeProperty rdf:about="http://ex.org/Company#sicText">
+        <rdfs:domain rdf:resource="http://ex.org/Company#SICCode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ex.org/Company#Account -->
+
+    <owl:Class rdf:about="http://ex.org/Company#Account"/>
+    
+
+
+    <!-- http://ex.org/Company#Address -->
+
+    <owl:Class rdf:about="http://ex.org/Company#Address"/>
+    
+
+
+    <!-- http://ex.org/Company#CEO -->
+
+    <owl:Class rdf:about="http://ex.org/Company#CEO"/>
+    
+
+
+    <!-- http://ex.org/Company#Company -->
+
+    <owl:Class rdf:about="http://ex.org/Company#Company"/>
+    
+
+
+    <!-- http://ex.org/Company#CompanyCategory -->
+
+    <owl:Class rdf:about="http://ex.org/Company#CompanyCategory"/>
+    
+
+
+    <!-- http://ex.org/Company#Continent -->
+
+    <owl:Class rdf:about="http://ex.org/Company#Continent">
+        <rdfs:subClassOf rdf:resource="http://ex.org/Company#Place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ex.org/Company#Country -->
+
+    <owl:Class rdf:about="http://ex.org/Company#Country">
+        <rdfs:subClassOf rdf:resource="http://ex.org/Company#Place"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ex.org/Company#EUCountry"/>
+            <rdf:Description rdf:about="http://ex.org/Company#NonEUCountry"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://ex.org/Company#Department -->
+
+    <owl:Class rdf:about="http://ex.org/Company#Department"/>
+    
+
+
+    <!-- http://ex.org/Company#DepartmentCategory -->
+
+    <owl:Class rdf:about="http://ex.org/Company#DepartmentCategory"/>
+    
+
+
+    <!-- http://ex.org/Company#DurationOfCEO -->
+
+    <owl:Class rdf:about="http://ex.org/Company#DurationOfCEO"/>
+    
+
+
+    <!-- http://ex.org/Company#DurationOfShareHolder -->
+
+    <owl:Class rdf:about="http://ex.org/Company#DurationOfShareHolder"/>
+    
+
+
+    <!-- http://ex.org/Company#EUCountry -->
+
+    <owl:Class rdf:about="http://ex.org/Company#EUCountry">
+        <rdfs:subClassOf rdf:resource="http://ex.org/Company#Country"/>
+        <owl:disjointWith rdf:resource="http://ex.org/Company#NonEUCountry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ex.org/Company#LimitedPartnership -->
+
+    <owl:Class rdf:about="http://ex.org/Company#LimitedPartnership"/>
+    
+
+
+    <!-- http://ex.org/Company#Mortgage -->
+
+    <owl:Class rdf:about="http://ex.org/Company#Mortgage"/>
+    
+
+
+    <!-- http://ex.org/Company#NonEUCountry -->
+
+    <owl:Class rdf:about="http://ex.org/Company#NonEUCountry">
+        <rdfs:subClassOf rdf:resource="http://ex.org/Company#Country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ex.org/Company#Place -->
+
+    <owl:Class rdf:about="http://ex.org/Company#Place"/>
+    
+
+
+    <!-- http://ex.org/Company#PreviousName -->
+
+    <owl:Class rdf:about="http://ex.org/Company#PreviousName"/>
+    
+
+
+    <!-- http://ex.org/Company#Return -->
+
+    <owl:Class rdf:about="http://ex.org/Company#Return"/>
+    
+
+
+    <!-- http://ex.org/Company#SICCode -->
+
+    <owl:Class rdf:about="http://ex.org/Company#SICCode"/>
+    
+
+
+    <!-- http://ex.org/Company#ShareHolder -->
+
+    <owl:Class rdf:about="http://ex.org/Company#ShareHolder"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.3.20160319-0906) https://github.com/owlcs/owlapi -->
+
